@@ -26,7 +26,8 @@ fi
 # Disable Intel backend:
 # cmake -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DENABLE_INTEL_BACKEND=OFF ..
 
-cmake -DCMAKE_BUILD_TYPE=$BUILD_TYPE ..
+cmake -DCMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc -DCMAKE_CUDA_COMPILER_TOOLKIT_ROOT=/usr/local/cuda/ ..
+#cmake -DCMAKE_BUILD_TYPE=$BUILD_TYPE ..
 
 os=$(uname)
 if [ "$os" == 'Linux' ]; then
